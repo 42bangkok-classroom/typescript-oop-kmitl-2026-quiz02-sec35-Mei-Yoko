@@ -13,7 +13,7 @@ interface PostResult {
   title: string;
 }
 
-async function getPostsByUser(userId: number): Promise<PostResult[]> {
+export async function getPostsByUser(userId: number): Promise<PostResult[]> {
   try {
     const response = await axios.get<Post[]>(
       `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
@@ -30,5 +30,4 @@ async function getPostsByUser(userId: number): Promise<PostResult[]> {
   }
 }
 
-export default getPostsByUser;
 
