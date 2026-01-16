@@ -13,7 +13,7 @@ interface CommentResult {
   body: string;
 }
 
-async function safeFetchComment(commentId: number): Promise<CommentResult | null> {
+export async function safeFetchComment(commentId: number): Promise<CommentResult | null> {
   try {
     const response = await axios.get<Comment>(
       `https://jsonplaceholder.typicode.com/comments/${commentId}`
@@ -28,5 +28,5 @@ async function safeFetchComment(commentId: number): Promise<CommentResult | null
   }
 }
 
-export default safeFetchComment;
+
 
