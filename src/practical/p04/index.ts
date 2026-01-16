@@ -8,7 +8,7 @@ interface Comment {
   body: string;
 }
 
-async function countCommentsByPost(): Promise<Record<number, number>> {
+export async function countCommentsByPost(): Promise<Record<number, number>> {
   try {
     const response = await axios.get<Comment[]>('https://jsonplaceholder.typicode.com/comments');
     
@@ -23,4 +23,4 @@ async function countCommentsByPost(): Promise<Record<number, number>> {
   }
 }
 
-export default countCommentsByPost;
+
